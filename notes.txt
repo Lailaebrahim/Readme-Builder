@@ -1,0 +1,14 @@
+to allow reading the tree of a repo:
+https://docs.github.com/en/rest/git/trees?apiVersion=2022-11-28#get-a-tree
+The fine-grained token must have the following permission set:
+"Contents" repository permissions (read)
+
+to allow to create/update readme:
+https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#create-or-update-file-contents
+The fine-grained token must have the following permission set:
+"Contents" repository permissions (write)
+
+to allow to get the languages of a repo:
+https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repository-languages
+The fine-grained token must have the following permission set:
+"Metadata" repository permissions (read)
