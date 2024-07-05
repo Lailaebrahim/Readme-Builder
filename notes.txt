@@ -13,6 +13,11 @@ https://docs.github.com/en/rest/repos/repos?apiVersion=2022-11-28#list-repositor
 The fine-grained token must have the following permission set:
 "Metadata" repository permissions (read)
 
+to allow to ge the content of a file "blob" with it's path:
+https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#get-repository-content
+The fine-grained token must have the following permission set:
+"Contents" repository permissions (read)
+
 
 test 1:
 
@@ -769,3 +774,4 @@ shell.h
 string.c
 string1.c
 strtok.c
+ 

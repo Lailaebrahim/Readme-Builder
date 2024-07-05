@@ -1,8 +1,20 @@
 import requests
-from create_tree import create_tree
 
 
 def get_repo_tree(github_token, owner, repo, branch='main'):
+    """Method to return content of a file based on it's path in repository
+
+  Args:
+      github_token (str): user token
+      owner (str): username of owner of repo (case insensitive)
+      repo (str): repository name
+      branch (str, optional): Branch owned by user Defaults to 'main'.
+
+  Returns:
+      str : tree of repository
+      status code : if request(to get repo languages or to get sha of tree or to get tree using it's sha) was unsuccessful
+  """
+  
     headers = {
         'Accept': 'application/vnd.github+json',
         'Authorization': f'Bearer {github_token}',
@@ -23,7 +35,7 @@ def get_repo_tree(github_token, owner, repo, branch='main'):
     else:
         return response.status_code
 
-    # Get the sha of the repository and check if it exists
+    # Get the sha of the repository tree and check if it exists
     url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{branch}"
     response = requests.get(url=url, headers=headers)
     if (response.status_code == 200):
@@ -40,7 +52,7 @@ def get_repo_tree(github_token, owner, repo, branch='main'):
             tree_str = """"""
             for item in tree_list:
                 tree_str += str(item.get('path')) + '\n'
-            repo_tree += create_tree(tree_str)
+            repo_tree += tree_str
             return repo_tree
         
         else:

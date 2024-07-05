@@ -4,7 +4,18 @@ import base64
 
 
 def push_readme(github_token, owner, repo, readme_content, branch='main'):
+    """Method to return content of a file based on it's path in repository
 
+  Args:
+      github_token (str): user token
+      owner (str): username of owner of repo (case insensitive)
+      repo (str): repository name
+      content (str): content of readme file to be pushed
+      branch (str, optional): Branch owned by user Defaults to 'main'.
+
+  Returns:
+      status code : if request was unsuccessful
+  """
     # Create the API endpoint URL
     url = f"https://api.github.com/repos/{owner}/{repo}/contents/README.md"
 
