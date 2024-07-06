@@ -1,6 +1,11 @@
-from django.shortcuts import render
+from django.template import loader
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("Hello, world From Readme Writter index!")
+def home(request):
+    template = loader.get_template('ReadmeBuilderWebApp0/base.html')
+    return HttpResponse(template.render(context={}, request=request))
+
+
+def about(request):
+    return HttpResponse("Hello, world From Readme Writter about!")

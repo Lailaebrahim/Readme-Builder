@@ -25,6 +25,10 @@ SECRET_KEY = 'django-insecure-)xoz+6!i)9usc1&$9e0(9cv1xga-zp1k8ewgpydmhz)m$ow!8d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# Config app with cairo time zone
+USE_TZ = True
+TIME_ZONE = 'Africa/Cairo'
+
 ALLOWED_HOSTS = []
 
 
