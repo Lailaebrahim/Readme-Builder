@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,9 +26,6 @@ SECRET_KEY = 'django-insecure-)xoz+6!i)9usc1&$9e0(9cv1xga-zp1k8ewgpydmhz)m$ow!8d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# Config app with cairo time zone
-USE_TZ = True
-TIME_ZONE = 'Africa/Cairo'
 
 ALLOWED_HOSTS = []
 
@@ -110,17 +108,21 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
+# Config app with cairo time zone
 USE_TZ = True
-
+USE_I18N = True
+TIME_ZONE = 'Africa/Cairo'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'ReadmeBuilderWebApp0/static')]
+
+# for user uploaded profile pic
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
