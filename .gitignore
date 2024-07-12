@@ -3,6 +3,7 @@
 config/llm.json
 myenv/
 ReadmeBuilderWebProject/db.sqlite3
+ReadmeBuilderWebProject/ReadmeBuilderWebApp0/migrations
 *.png
 *jpg
 *jpeg
