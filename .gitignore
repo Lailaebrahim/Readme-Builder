@@ -3,3 +3,6 @@
 config/llm.json
 myenv/
 ReadmeBuilderWebProject/db.sqlite3
+*.png
+*jpg
+*jpeg
