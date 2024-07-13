@@ -6,35 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Readme writer{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    {% block extra_css %}{% endblock %}
 </head>
 <body>
-    <header>
-       <nav>
-            <div class="nav-wrapper">
-            <div class="app-title">
-                <a href="/">Readme Writer</a>
+       <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <h2 class="logo">Readme Builder</h2>
+
+                </div>
+                <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a><li>
+                    <li><a href="#">Sign in</a></li>
+                    <li><a href="#">Sign up</a></li>
+                </ul>
             </div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li>
-            </ul>
             </div>
-        </nav>
-    </header>
+             <main>
+            {% block content %}
+            <!-- Child templates will insert their content here -->
+            {% endblock %}
+            </main>
+        </div>
 
-    <main>
-        {% block content %}
-        <!-- Child templates will insert their content here -->
-        {% endblock %}
-    </main>
-
-    <footer>
-        <p>&copy; {% now "Y" %} Readme Writer</p>
-    </footer>
-
-    <script src="{% static 'js/main.js' %}"></script>
-    {% block extra_js %}{% endblock %}
+        <footer>
+            <p>&copy; {% now "Y" %} Readme Writer</p>
+        </footer>
 </body>
 </html>
