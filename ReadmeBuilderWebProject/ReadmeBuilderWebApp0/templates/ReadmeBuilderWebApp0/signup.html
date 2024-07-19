@@ -1,27 +1,36 @@
 {% extends "ReadmeBuilderWebApp0/base.html" %}
-{% load static%}
 {% block content %}
     <div class="centered-container">
         <div class="signup">
-            <form action="" method="post">
+            <form action="" method="POST">
               <legend>Sign Up</legend>
                 {% csrf_token %}
+                {{ form.non_field_errors }}
                 <fieldset>
                   <div class="form-group">
-                      <label for="username">Username</label>
-                      <input type="text" name="username" id="username" required>
+                       {{ form.username.label_tag }}
+                       {{ form.username }}
+                       {{ form.username.errors }}
                   </div>
                   <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" name="email" id="email" required>
+                        {{ form.email.label_tag }}
+                        {{ form.email }}
+                        {{ form.email.errors }}
+                  </div>
+                <div class="form-group">
+                       {{ form.github_username.label_tag }}
+                       {{ form.github_username }}
+                       {{ form.github_username.errors }}
                   </div>
                   <div class="form-group">
-                      <label for="password">Password</label>
-                      <input type="password" name="password" id="password" required>
+                        {{ form.password1.label_tag }}
+                        {{ form.password1 }}
+                        {{ form.password1.errors }}
                   </div>
                   <div class="form-group">
-                      <label for="confirmpassword"> Confirm Password</label>
-                      <input type="password" name="confirmpassword" id="confirmpassword" required>
+                        {{ form.password2.label_tag }}
+                        {{ form.password2 }}
+                        {{ form.password2.errors }}
                   </div>
                   <button type="submit" class="submit-btn">Sign Up</button>
                 </fieldset>
